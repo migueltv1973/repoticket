@@ -1,0 +1,30 @@
+<h1>New Ticket</h1>
+
+
+<%= form_for @ticket  do |f| %>
+<div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+</div>
+<div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+</div>
+
+<div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_area :descripcion %>
+</div>
+
+<div>
+    <h4>Change your image.</h4>
+    <span class="picture">
+    <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png' %>
+    </span>
+</div>
+
+<%= f.submit "Save changes", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to 'Back', tickets_path %>
+

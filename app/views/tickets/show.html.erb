@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+
+    
+      <%= @ticket.title %> </br>
+      <%= @ticket.descripcion %> </br>
+      <%= @ticket.email %></br>
+      <%= @ticket.status %></br>
+
+      <% if @ticket.photo.attached? %>
+            <div class="row">
+                  <div class="col-lg-12">
+                        <%= image_tag(url_for(@ticket.photo)) %></br>
+                  <div>
+            <div>
+      <% end %>
+      
+
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>

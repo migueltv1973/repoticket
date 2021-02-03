@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>        
+        <meta charset="utf-8" />
+        <title><%= content_for?(:title) ? yield(:title) : "Geosatelital - Dashboard" %></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Geosatelital App" name="description" />
+        <meta content="Geosatelital" name="author" />
+        <meta name="theme-color" content="#2a3042">
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+
+        <%= favicon_link_tag 'https://cdn1.geolabs.pw/images/favicon.ico' %>
+
+        <%= javascript_include_tag 'https://cdn1.geolabs.pw/js/libs/jquery/jquery.min.js', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'https://cdn1.geolabs.pw/js/libs/bootstrap/js/bootstrap.bundle.min.js', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'https://cdn1.geolabs.pw/js/libs/metismenu/metisMenu.min.js', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'https://cdn1.geolabs.pw/js/libs/simplebar/simplebar.min.js', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'https://cdn1.geolabs.pw/js/libs/node-waves/waves.min.js', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'https://cdn1.geolabs.pw/js/app-rails.min.js', 'data-turbolinks-track': 'reload' %>
+
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= yield(:head) %>
+    </head>
+
+    <body data-topbar="dark">
+        <!-- ******************** Page Start ******************** -->
+        <!-- ******************** Page Start ******************** -->
+        <!-- ******************** Page Start ******************** -->
+        <!-- Preloader Start -->
+        <div id="preloader">
+            <div id="status">
+                <div class="spinner-chase">
+                    <div class="chase-dot"></div>
+                    <div class="chase-dot"></div>
+                    <div class="chase-dot"></div>
+                    <div class="chase-dot"></div>
+                    <div class="chase-dot"></div>
+                    <div class="chase-dot"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Preloader End -->        
+        <!-- Main Content Start -->
+        <div id="layout-wrapper">
+            <!-- Header Start -->
+            <%= render partial: 'layouts/dashboard/header' %>
+            <!-- Header End -->
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+                <div data-simplebar class="h-100">
+                    <!-- Sidemenu Start -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <%= render partial: 'layouts/dashboard/navigation' %>
+                        <!-- Left Menu Emd -->
+                    </div>
+                    <!-- Sidemenu Emd -->
+                </div>
+            </div>
+            <!-- ========== Left Sidebar End ========== -->
+            
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+
+            <!-- ========== Start Right Content Start ========== -->
+            <div class="main-content">
+                <!-- Page Content Start -->
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <%= yield %>
+                    </div>
+                </div>
+                <!-- Page Content End -->
+                <!-- Footer Start -->
+                <%= render partial: 'layouts/dashboard/footer' %>
+                <!-- Footer Start -->
+            </div>
+            <!-- ========== Start Right Content End ========== -->
+        </div>
+        <!-- Main Content End -->
+
+        <!-- Right Bar Start -->
+        <div class="right-bar">
+            <div data-simplebar class="h-100">
+                <div class="rightbar-title px-3 py-4">
+                    <a href="javascript:void(0);" class="right-bar-toggle float-right">
+                        <i class="mdi mdi-close noti-icon"></i>
+                    </a>
+                    <h5 class="m-0">Settings</h5>
+                </div>
+                <hr class="mt-0" />
+                <h6 class="text-center mb-0">Something</h6>
+            </div>
+        </div>
+        <!-- Right Bar End -->
+
+        <!-- ******************** Page End ******************** -->
+        <!-- ******************** Page End ******************** -->
+        <!-- ******************** Page End ******************** -->
+
+        <!-- Right Bar Overlay Start -->
+        <div class="rightbar-overlay"></div>
+        <!-- Right Bar Overlay End -->  
+    </body>
+</html>

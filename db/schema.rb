@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_01_182216) do
+ActiveRecord::Schema.define(version: 2021_01_30_210612) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -44,12 +44,10 @@ ActiveRecord::Schema.define(version: 2021_02_01_182216) do
 
   create_table "ticket_threads", force: :cascade do |t|
     t.string "title"
-    t.string "email"
     t.text "descripcion"
     t.string "photo"
-    t.integer "id_estado"
-    t.integer "id_cliente"
-    t.integer "id_usuario"
+    t.integer "cliente_id"
+    t.integer "usuario_id"
     t.integer "ticket_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -62,9 +60,8 @@ ActiveRecord::Schema.define(version: 2021_02_01_182216) do
     t.text "descripcion"
     t.string "photo"
     t.integer "status", default: 0
-    t.integer "id_estado"
-    t.integer "id_cliente"
-    t.integer "id_usuario"
+    t.integer "cliente_id"
+    t.integer "usuario_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

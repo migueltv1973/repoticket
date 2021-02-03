@@ -4,6 +4,7 @@ class TicketsController < ApplicationController
   # GET /tickets or /tickets.json
   def index
     @tickets = Ticket.all
+    
   end
 
   # GET /tickets/1 or /tickets/1.json
@@ -25,7 +26,7 @@ class TicketsController < ApplicationController
 
     respond_to do |format|
       if @ticket.save
-        TicketSendMailer.send_signup_email(@ticket).deliver_now
+       # TicketSendMailer.send_signup_email(@ticket).deliver_now
         format.html { redirect_to @ticket, notice: "Ticket was successfully created." }
         format.json { render :show, status: :created, location: @ticket }
       else
